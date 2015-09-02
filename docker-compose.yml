@@ -1,5 +1,5 @@
 web:
-  build: ./web
+  build: ./nginx
   #volumes:
   #  - ./web/log:/var/log/nginx
   #  - ./web/sites-enabled:/etc/nginx/sites-enabled
@@ -7,7 +7,7 @@ web:
   ##  - redis
   ports:
     - "8080:80"
-#test:
+#web:
 #  build: ./web
 #  volumes:
 #    - ./web/log:/var/log/nginx
@@ -20,11 +20,11 @@ web:
 # image: redis:2.6
 # ports:
 #   - "6379:6379"
-app:
- build: ./app
- volumes:
-   - ./app:/usr/src/app
- #links:
- #  - redis
- ports:
-   - "3000:3000"
+#app:
+# build: ./app
+# volumes:
+#   - ./app:/usr/src/app
+# #links:
+# #  - redis
+# ports:
+#   - "3000:3000"
