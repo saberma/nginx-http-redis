@@ -1,25 +1,25 @@
-web:
-  build: ./nginx
-  #volumes:
-  #  - ./web/log:/var/log/nginx
-  #  - ./web/sites-enabled:/etc/nginx/sites-enabled
-  ##links:
-  ##  - redis
-  ports:
-    - "8080:80"
 #web:
-#  build: ./web
-#  volumes:
-#    - ./web/log:/var/log/nginx
-#    - ./web/sites-enabled:/etc/nginx/sites-enabled
+#  build: ./nginx
+#  #volumes:
+#  #  - ./web/log:/var/log/nginx
+#  #  - ./web/sites-enabled:/etc/nginx/sites-enabled
 #  ##links:
 #  ##  - redis
 #  ports:
 #    - "8080:80"
-#redis:
-# image: redis:2.6
-# ports:
-#   - "6379:6379"
+web1:
+  build: ./web
+  volumes:
+    - ./web/log:/var/log/nginx
+    - ./web/sites-enabled:/etc/nginx/sites-enabled
+  links:
+    - redis
+  ports:
+    - "8088:80"
+redis:
+ image: redis:2.6
+ ports:
+   - "6379:6379"
 #app:
 # build: ./app
 # volumes:
