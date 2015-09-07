@@ -15,7 +15,8 @@ web1:
   links:
     - redis
   ports:
-    - "8088:80"
+    - "8080:80"
+    - "8088:88"
 redis:
  image: redis:2.6
  ports:
