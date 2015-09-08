@@ -14,18 +14,18 @@ web1:
     - ./web/sites-enabled:/etc/nginx/sites-enabled
   links:
     - redis
+    - app
   ports:
     - "8080:80"
-    - "8088:88"
 redis:
  image: redis:2.6
  ports:
    - "6379:6379"
-#app:
-# build: ./app
-# volumes:
-#   - ./app:/usr/src/app
-# #links:
-# #  - redis
-# ports:
-#   - "3000:3000"
+app:
+ build: ./app
+ volumes:
+   - ./app:/usr/src/app
+ links:
+   - redis
+ ports:
+   - "3000:3000"
