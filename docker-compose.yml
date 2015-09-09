@@ -12,6 +12,7 @@ web1:
   volumes:
     - ./web/log:/var/log/nginx
     - ./web/sites-enabled:/etc/nginx/sites-enabled
+    - ./web/html:/usr/share/nginx/html
   links:
     - redis
     - app
