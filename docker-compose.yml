@@ -1,32 +1,32 @@
 #web:
-#  build: ./nginx
-#  #volumes:
-#  #  - ./web/log:/var/log/nginx
-#  #  - ./web/sites-enabled:/etc/nginx/sites-enabled
-#  ##links:
-#  ##  - redis
+#  build: ./web
+#  volumes:
+#    - ./web/log:/var/log/nginx
+#    - ./web/sites-enabled:/etc/nginx/sites-enabled
+#    - ./web/html:/usr/share/nginx/html
+#  links:
+#    - redis
+#    - appnode
+#    - apprails
 #  ports:
 #    - "8080:80"
-web1:
-  build: ./web
-  volumes:
-    - ./web/log:/var/log/nginx
-    - ./web/sites-enabled:/etc/nginx/sites-enabled
-    - ./web/html:/usr/share/nginx/html
-  links:
-    - redis
-    - app
-  ports:
-    - "8080:80"
-redis:
- image: redis:2.6
- ports:
-   - "6379:6379"
-app:
- build: ./app
+#redis:
+# image: redis:2.6
+# ports:
+#   - "6379:6379"
+#appnode:
+# build: ./app-node
+# volumes:
+#   - ./app:/usr/src/app
+# links:
+#   - redis
+# ports:
+#   - "4000:4000"
+apprails:
+ build: ./app-rails
  volumes:
    - ./app:/usr/src/app
- links:
-   - redis
+ #links:
+ #  - redis
  ports:
    - "3000:3000"
