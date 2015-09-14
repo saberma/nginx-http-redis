@@ -14,19 +14,19 @@
 # image: redis:2.6
 # ports:
 #   - "6379:6379"
-#appnode:
-# build: ./app-node
-# volumes:
-#   - ./app:/usr/src/app
-# links:
-#   - redis
-# ports:
-#   - "4000:4000"
-apprails:
- build: ./app-rails
+appnode:
+ build: ./app-node
  volumes:
-   - ./app:/usr/src/app
+   - ./app-node:/usr/src/app
  #links:
  #  - redis
  ports:
-   - "3000:3000"
+   - "4000:4000"
+#apprails:
+# build: ./app-rails
+# volumes:
+#   - ./app-rails/app:/u/apps/rails
+# #links:
+# #  - redis
+# #ports:
+# #  - "3000:3000"
