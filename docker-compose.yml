@@ -10,23 +10,23 @@
 #    - apprails
 #  ports:
 #    - "8080:80"
-#redis:
-# image: redis:2.6
-# ports:
-#   - "6379:6379"
-appnode:
- build: ./app-node
+# redis:
+#  image: redis:2.6
+#  ports:
+#    - "6379:6379"
+# appnode:
+#  build: ./app-node
+#  volumes:
+#    - ./app-node:/usr/src/app
+#  links:
+#    - redis
+#  ports:
+#    - "4000:4000"
+apprails:
+ build: ./app-rails
  volumes:
-   - ./app-node:/usr/src/app
- #links:
- #  - redis
+   - ./app-rails/foo:/u/apps/rails
+ # links:
+ #   - redis
  ports:
-   - "4000:4000"
-#apprails:
-# build: ./app-rails
-# volumes:
-#   - ./app-rails/app:/u/apps/rails
-# #links:
-# #  - redis
-# #ports:
-# #  - "3000:3000"
+   - "3000:3000"
