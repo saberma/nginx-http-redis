@@ -1,1 +1,6 @@
 web/log/*
+
+app-rails/foo/tmp
+app-rails/foo/log
+
+*.sqlite3

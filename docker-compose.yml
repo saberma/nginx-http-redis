@@ -1,32 +1,32 @@
-#web:
-#  build: ./web
-#  volumes:
-#    - ./web/log:/var/log/nginx
-#    - ./web/sites-enabled:/etc/nginx/sites-enabled
-#    - ./web/html:/usr/share/nginx/html
-#  links:
-#    - redis
-#    - appnode
-#    - apprails
-#  ports:
-#    - "8080:80"
-# redis:
-#  image: redis:2.6
-#  ports:
-#    - "6379:6379"
-# appnode:
-#  build: ./app-node
-#  volumes:
-#    - ./app-node:/usr/src/app
-#  links:
-#    - redis
-#  ports:
-#    - "4000:4000"
+web:
+  build: ./web
+  volumes:
+    - ./web/log:/var/log/nginx
+    - ./web/sites-enabled:/etc/nginx/sites-enabled
+    - ./web/html:/usr/share/nginx/html
+  links:
+    - redis
+    - appnode
+    - apprails
+  ports:
+    - "8080:80"
+redis:
+  image: redis:2.6
+  ports:
+    - "6379:6379"
+appnode:
+  build: ./app-node
+  volumes:
+    - ./app-node:/usr/src/app
+  links:
+    - redis
+  ports:
+    - "4000:4000"
 apprails:
- build: ./app-rails
- volumes:
-   - ./app-rails/foo:/u/apps/rails
- # links:
- #   - redis
- ports:
-   - "3000:3000"
+  build: ./app-rails
+  volumes:
+    - ./app-rails/foo:/u/apps/rails
+  links:
+    - redis
+  ports:
+    - "3000:3000"
