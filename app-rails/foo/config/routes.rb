@@ -3,8 +3,7 @@ Foo::Application.routes.draw do
   get "to-app-directly"     , to: "home#missing"
   get "through-redis-to-app", to: "home#missing"
 
-  get "products"    , to: "products#index"
-  get "products/:id", to: "products#show"
+  resources :products
   root "home#page"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
