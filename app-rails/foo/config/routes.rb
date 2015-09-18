@@ -1,4 +1,10 @@
 Foo::Application.routes.draw do
+  # 测试请求通过 redis 缓存无效后到达 app，和直接到达 app 的性能差异
+  get "to-app-directly"     , to: "home#missing"
+  get "through-redis-to-app", to: "home#missing"
+
+  get "products"    , to: "products#index"
+  get "products/:id", to: "products#show"
   root "home#page"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

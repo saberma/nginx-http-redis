@@ -4,16 +4,15 @@ web:
     - ./web/log:/var/log/nginx
     - ./web/sites-enabled:/etc/nginx/sites-enabled
     - ./web/html:/usr/share/nginx/html
+    - ./web/partial:/etc/nginx/partial
+    - ./web/passwd:/etc/nginx/conf/passwd
   links:
     - redis
     - appnode
     - apprails
   ports:
     - "8080:80"
-redis:
-  image: redis:2.6
-  ports:
-    - "6379:6379"
+    - "8081:81"
 appnode:
   build: ./app-node
   volumes:
@@ -24,9 +23,21 @@ appnode:
     - "4000:4000"
 apprails:
   build: ./app-rails
+  command: rails s
   volumes:
     - ./app-rails/foo:/u/apps/rails
   links:
     - redis
   ports:
     - "3000:3000"
+sidekiq:  
+  build: ./app-rails
+  command: bundle exec sidekiq
+  volumes:
+    - ./app-rails/foo:/u/apps/rails
+  links:
+    - redis
+redis:
+  image: redis:2.6
+  ports:
+    - "6379:6379"

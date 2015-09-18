@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   def save_cache_to_redis
     Rails.logger.info "uri: #{request.url}; path: #{request.path}"
-    $redis_cache.set(request.path, response.body)
+    #we just use set here now
+    $redis.set( request.path, response.body )
+
+    #just like before
+    if @model_name
+      $redis.sadd("i:#{@model_name.downcase}:#{@model_id}", request.url)
+    end
   end
 end

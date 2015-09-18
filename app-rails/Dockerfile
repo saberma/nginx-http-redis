@@ -13,6 +13,6 @@ COPY foo/Gemfile /u/apps/rails/
 
 RUN bundle install
 
-CMD ["rails", "s"]
+#ENV RAILS_ENV production
 
 EXPOSE 3000

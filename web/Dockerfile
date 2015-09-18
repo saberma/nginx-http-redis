@@ -47,4 +47,4 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 CMD ["nginx", "-g", "daemon off;"]
 
-EXPOSE 80
+EXPOSE 80 81
