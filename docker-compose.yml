@@ -11,8 +11,8 @@ web:
     - appnode
     - apprails
   ports:
-    - "8080:80"
-    - "8081:81"
+    - "8080:8080"
+    - "8081:8081"
 appnode:
   build: ./app-node
   volumes:

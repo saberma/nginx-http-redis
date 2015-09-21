@@ -4,6 +4,7 @@ Foo::Application.routes.draw do
   get "through-redis-to-app", to: "home#missing"
 
   resources :products
+  post "/products/:id", to: "products#update"
   root "home#page"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

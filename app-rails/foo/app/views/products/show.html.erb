@@ -1,3 +1,5 @@
+<h1><%= @product.id %> <%= Time.now.to_s(:db) %></h1>
+
 <%= form_for @product do |f| %>
   <%= f.submit %>
 <% end %>

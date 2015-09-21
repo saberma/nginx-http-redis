@@ -9,6 +9,6 @@ class Sweeper
 
     Rails.logger.info "running sweeper job: #{url}"
     response = HTTParty.get(uri, basic_auth: auth)
-    Rails.logger.info "response: #{response.body}"
+    #Rails.logger.info "response: #{response.body}"
   end
 end
