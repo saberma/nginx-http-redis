@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  after_filter :save_cache_to_redis, only: :show
+  after_filter :save_cache_to_redis, only: [:index, :show]
   after_filter :set_csrf_cookie, only: :show
 
   def index

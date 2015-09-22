@@ -1,0 +1,3 @@
+<%- Product.all.each do |product| %>
+<h1><%= c(product).id %> <%= Time.now.to_s(:db) %></h1>
+<% end %>

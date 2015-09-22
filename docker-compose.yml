@@ -38,6 +38,6 @@ sidekiq:
   links:
     - redis
 redis:
-  image: redis:2.6
+  build: ./redis
   ports:
     - "6379:6379"
