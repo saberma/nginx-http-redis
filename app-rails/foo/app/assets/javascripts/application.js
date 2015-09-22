@@ -11,3 +11,5 @@
 // about supported directives.
 //
 //= require_tree .
+//= require js.cookie
+//= require jquery-2.1.4.min

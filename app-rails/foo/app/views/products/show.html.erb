@@ -3,3 +3,11 @@
 <%= form_for @product do |f| %>
   <%= f.submit %>
 <% end %>
+
+<script type="text/javascript">
+  if(!Cookies.get('csrf_token')) {
+    jQuery.get('/sessions/status', function(data) {
+      console.log(Cookies.get('csrf_token'));
+    });
+  };
+</script>

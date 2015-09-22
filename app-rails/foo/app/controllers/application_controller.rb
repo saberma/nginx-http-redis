@@ -13,4 +13,17 @@ class ApplicationController < ActionController::Base
       $redis.sadd("i:#{@model_name.downcase}:#{@model_id}", request.url)
     end
   end
+
+  protected
+  # http://stackoverflow.com/a/15056471
+  def verified_request?
+    # Rails.logger.info cookies[:csrf_token]
+    super || form_authenticity_token == cookies[:csrf_token]
+  end
+
+  def set_csrf_cookie
+    if protect_against_forgery?
+      cookies[:csrf_token] = form_authenticity_token
+    end
+  end
 end

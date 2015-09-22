@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   after_filter :save_cache_to_redis, only: :show
-  skip_before_filter :verify_authenticity_token, only: :update
+  after_filter :set_csrf_cookie, only: :show
 
   def index
   end
