@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  caches_page :page
+  caches_redis_page :page
 
   def page
   end
