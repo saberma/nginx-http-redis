@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  after_filter :save_cache_to_redis, only: :page
+  caches_page :page
 
   def page
   end

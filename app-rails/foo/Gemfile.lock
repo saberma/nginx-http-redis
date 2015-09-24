@@ -1,5 +1,13 @@
+PATH
+  remote: /u/apps/redis_page
+  specs:
+    redis_page (0.1.0)
+      actionpack (~> 4.0.9)
+      activesupport (~> 4.0.9)
+      sidekiq (~> 3.5.0)
+
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actionmailer (4.0.9)
       actionpack (= 4.0.9)
@@ -99,6 +107,8 @@ GEM
     multi_xml (0.5.5)
     nenv (0.2.0)
     polyglot (0.3.5)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -117,8 +127,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
     rake (10.4.2)
-    rdoc (4.2.0)
-      json (~> 1.4)
     redis (3.2.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
@@ -129,9 +137,6 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
     sidekiq (3.5.0)
       celluloid (~> 0.17.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -172,10 +177,11 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   httparty
   jbuilder (~> 1.2)
+  quiet_assets
   rails (= 4.0.9)
   redis
+  redis_page!
   sass-rails (~> 4.0.2)
-  sdoc
   sidekiq
   sqlite3
   uglifier (>= 1.3.0)

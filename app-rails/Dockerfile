@@ -9,7 +9,7 @@ RUN gem install rails -v 4.0.9 --no-ri --no-rdoc
 
 RUN mkdir -p /u/apps/rails
 WORKDIR /u/apps/rails
-COPY foo/Gemfile /u/apps/rails/
+COPY foo/Gemfile* /u/apps/rails/
 
 RUN bundle install
 

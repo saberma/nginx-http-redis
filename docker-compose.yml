@@ -8,24 +8,25 @@ web:
     - ./web/passwd:/etc/nginx/conf/passwd
   links:
     - redis
-    - appnode
+    #- appnode
     - apprails
   ports:
     - "8080:8080"
     - "8081:8081"
-appnode:
-  build: ./app-node
-  volumes:
-    - ./app-node:/usr/src/app
-  links:
-    - redis
-  ports:
-    - "4000:4000"
+#appnode:
+#  build: ./app-node
+#  volumes:
+#    - ./app-node:/usr/src/app
+#  links:
+#    - redis
+#  ports:
+#    - "4000:4000"
 apprails:
   build: ./app-rails
   command: rails s
   volumes:
     - ./app-rails/foo:/u/apps/rails
+    - ./app-rails/redis_page:/u/apps/redis_page
   links:
     - redis
   ports:

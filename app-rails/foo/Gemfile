@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.9'
 
@@ -23,14 +24,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 
 gem 'redis'               # Redis 缓存
+gem 'redis_page'          # 保存页面到 Redis 缓存
 gem 'sidekiq'             # 自动推送缓存
 
 gem 'unicorn'
 gem 'httparty'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :development do
+  gem "quiet_assets"
 end
 
 # Use ActiveModel has_secure_password

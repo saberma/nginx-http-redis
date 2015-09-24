@@ -3,12 +3,27 @@ upstream redisbackend {
   keepalive 1024;
 }
 
+upstream backend_node {
+  server appnode:4000;
+}
+
 upstream backend_rails {
   server apprails:3000;
 }
 
 server {
   listen 8080;
+
+  location /index.html  {
+    root /usr/share/nginx/html;
+    index index.html;
+  }
+
+  # 测试请求通过 redis 缓存无效后到达 app，和直接到达 app 的性能差异
+  location /to-app-directly {
+    include /etc/nginx/partial/rails.conf;
+  }
+
 
   location ^~ /assets/ {
     include /etc/nginx/partial/rails.conf;
@@ -36,13 +51,19 @@ server {
     error_page     404 = @fallback_rails;
   }
 
+  location @fallback_node {
+    internal;    # 只能通过 error_page 进入
+    proxy_pass http://backend_node;
+  }
+
+  #location / {
   location @fallback_rails {
     internal;    # 只能通过 error_page 进入
     include /etc/nginx/partial/rails.conf;
   }
 }
 
-# CMS 更新实体后，通过后台任务直接触发 redis 缓存更新
+# 直接触发 redis 缓存更新
 server {
   listen 8081;
 
