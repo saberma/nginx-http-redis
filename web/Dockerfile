@@ -15,6 +15,20 @@ RUN wget http://people.freebsd.org/~osa/ngx_http_redis-0.3.7.tar.gz -O ngx-http-
     mkdir /tmp/nginx/http-redis && \
     tar -xzvf ngx-http-redis.tar.gz -C /tmp/nginx/http-redis --strip-components=1
 
+RUN wget https://github.com/maxmind/libmaxminddb/releases/download/1.1.1/libmaxminddb-1.1.1.tar.gz -O libmaxminddb.tar.gz && \
+    mkdir /tmp/nginx/libmaxminddb && \
+    tar -xzvf libmaxminddb.tar.gz -C /tmp/nginx/libmaxminddb --strip-components=1
+RUN cd /tmp/nginx/libmaxminddb && \
+    ./configure && \
+    make && \
+    make check && \
+    make install && \
+    ldconfig
+
+RUN wget https://github.com/leev/ngx_http_geoip2_module/archive/1.0.tar.gz -O ngx-http-geoip2.tar.gz && \
+    mkdir /tmp/nginx/http-geoip2 && \
+    tar -xzvf ngx-http-geoip2.tar.gz -C /tmp/nginx/http-geoip2 --strip-components=1
+
 WORKDIR /tmp/nginx
 
 RUN ./configure --sbin-path=/usr/local/sbin \
@@ -36,7 +50,8 @@ RUN ./configure --sbin-path=/usr/local/sbin \
     --with-http_flv_module \
     --with-http_mp4_module \
     --with-http_gunzip_module \
-    --add-module=http-redis && \
+    --add-module=http-redis \
+    --add-module=http-geoip2 && \
     make && \
     make install
 

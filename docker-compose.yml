@@ -6,6 +6,7 @@ web:
     - ./web/html:/usr/share/nginx/html
     - ./web/partial:/etc/nginx/partial
     - ./web/passwd:/etc/nginx/conf/passwd
+    - ./web/files:/etc/nginx/files
   links:
     - redis
     #- appnode
