@@ -25,7 +25,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 
 gem 'redis'                  # Redis 缓存
-gem 'sidekiq'                # 自动推送缓存
 gem 'redis_page', '~> 0.1.1' # 保存页面到 Redis 缓存
 #gem 'redis_page', path: '/u/apps/redis_page'          # 保存页面到 Redis 缓存
 

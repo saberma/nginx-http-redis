@@ -178,7 +178,6 @@ DEPENDENCIES
   redis
   redis_page (~> 0.1.1)
   sass-rails (~> 4.0.2)
-  sidekiq
   sqlite3
   uglifier (>= 1.3.0)
   unicorn
