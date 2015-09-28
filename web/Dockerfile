@@ -25,6 +25,7 @@ RUN cd /tmp/nginx/libmaxminddb && \
     make install && \
     ldconfig
 
+# https://github.com/leev/ngx_http_geoip2_module
 RUN wget https://github.com/leev/ngx_http_geoip2_module/archive/1.0.tar.gz -O ngx-http-geoip2.tar.gz && \
     mkdir /tmp/nginx/http-geoip2 && \
     tar -xzvf ngx-http-geoip2.tar.gz -C /tmp/nginx/http-geoip2 --strip-components=1
