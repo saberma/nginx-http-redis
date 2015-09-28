@@ -1,4 +1,5 @@
-source 'https://ruby.taobao.org'
+#source 'https://ruby.taobao.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -23,9 +24,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'redis'               # Redis 缓存
-gem 'sidekiq'             # 自动推送缓存
-gem 'redis_page', path: '/u/apps/redis_page'          # 保存页面到 Redis 缓存
+gem 'redis'                  # Redis 缓存
+gem 'sidekiq'                # 自动推送缓存
+gem 'redis_page', '~> 0.1.1' # 保存页面到 Redis 缓存
+#gem 'redis_page', path: '/u/apps/redis_page'          # 保存页面到 Redis 缓存
 
 gem 'unicorn'
 gem 'httparty'

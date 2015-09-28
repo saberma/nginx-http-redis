@@ -11,11 +11,11 @@ RUN mkdir -p /u/apps/rails
 WORKDIR /u/apps/rails
 COPY foo/Gemfile* /u/apps/rails/
 
-RUN mkdir -p /u/apps/redis_page
-COPY redis_page /u/apps/redis_page
-#RUN mkdir -p /u/apps/redis_page/lib/redis_page
-#COPY redis_page/redis_page.gemspec /u/apps/redis_page/redis_page.gemspec
-#COPY redis_page/lib/redis_page/version.rb /u/apps/redis_page/lib/redis_page/
+#RUN mkdir -p /u/apps/redis_page
+#COPY redis_page /u/apps/redis_page
+##RUN mkdir -p /u/apps/redis_page/lib/redis_page
+##COPY redis_page/redis_page.gemspec /u/apps/redis_page/redis_page.gemspec
+##COPY redis_page/lib/redis_page/version.rb /u/apps/redis_page/lib/redis_page/
 
 RUN bundle install
 
