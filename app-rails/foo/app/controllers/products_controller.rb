@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  caches_redis_page :index, :show
+  caches_redis_page :index, :show, append_country: true
 
   def index
   end

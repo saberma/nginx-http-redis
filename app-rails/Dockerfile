@@ -11,6 +11,9 @@ RUN mkdir -p /u/apps/rails
 WORKDIR /u/apps/rails
 COPY foo/Gemfile* /u/apps/rails/
 
+RUN mkdir -p /u/apps/redis_page
+COPY redis_page /u/apps/redis_page
+
 RUN bundle install
 
 #ENV RAILS_ENV production

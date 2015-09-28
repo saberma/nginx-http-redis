@@ -1,7 +1,7 @@
 web/log
-web/files
 
 app-rails/foo/tmp
 app-rails/foo/log
+app-rails/redis_page
 
 *.sqlite3

@@ -27,6 +27,7 @@ apprails:
   command: rails s
   volumes:
     - ./app-rails/foo:/u/apps/rails
+    - ./app-rails/redis_page:/u/apps/redis_page
   links:
     - redis
   ports:
