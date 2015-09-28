@@ -1,4 +1,7 @@
 Foo::Application.routes.draw do
+  # 随机切换国家
+  post "countries/change"
+
   get "sessions/status"
 
   # 测试请求通过 redis 缓存无效后到达 app，和直接到达 app 的性能差异

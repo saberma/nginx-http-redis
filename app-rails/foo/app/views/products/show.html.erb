@@ -4,6 +4,12 @@
   <%= f.submit %>
 <% end %>
 
+<br/>
+
+<%= form_tag countries_change_path, method: :post do%>
+  <%= submit_tag 'Change Country' %>
+<% end %>
+
 <script type="text/javascript">
   if(!Cookies.get('csrf_token')) {
     jQuery.get('/sessions/status', function(data) {
