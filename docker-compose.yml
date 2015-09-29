@@ -4,8 +4,8 @@ web:
     - ./web/log:/var/log/nginx
     - ./web/sites-enabled:/etc/nginx/sites-enabled
     - ./web/html:/usr/share/nginx/html
-    - ./web/partial:/etc/nginx/partial
-    - ./web/passwd:/etc/nginx/conf/passwd
+    - ./web/snippets:/etc/nginx/snippets
+    - ./web/ca:/etc/nginx/ca
     - ./web/files:/etc/nginx/files
   links:
     - redis

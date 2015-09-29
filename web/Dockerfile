@@ -51,6 +51,10 @@ RUN ./configure --sbin-path=/usr/local/sbin \
     --with-http_flv_module \
     --with-http_mp4_module \
     --with-http_gunzip_module \
+    --with-http_realip_module \
+    --with-http_auth_request_module \
+    --with-http_addition_module \
+    --with-http_sub_module \
     --add-module=http-redis \
     --add-module=http-geoip2 && \
     make && \
