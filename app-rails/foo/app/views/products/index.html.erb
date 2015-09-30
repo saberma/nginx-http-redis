@@ -1,3 +1,11 @@
-<%- Product.all.each do |product| %>
-<h1><%= c(product).id %> <%= Time.now.to_s(:db) %></h1>
+<%- c(Product).all.each do |product| %>
+<h2><%= c(product).id %> <%= Time.now.to_s(:db) %></h1>
 <% end %>
+
+<%= form_tag products_path, method: :post do%>
+  <%= submit_tag 'Add Product' %>
+<% end %>
+
+<br/>
+
+<%= render partial: 'country' %>

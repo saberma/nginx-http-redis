@@ -1,0 +1,5 @@
+<h2>show different country: <%= cookies[:country] %></h2>
+
+<%= form_tag countries_change_path, method: :post do%>
+  <%= submit_tag 'Change Country' %>
+<% end %>

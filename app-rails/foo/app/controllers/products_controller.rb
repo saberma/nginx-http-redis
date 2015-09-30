@@ -13,4 +13,9 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
+
+  def create
+    @product = Product.create
+    redirect_to products_path and return
+  end
 end

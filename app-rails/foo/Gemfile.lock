@@ -1,3 +1,11 @@
+PATH
+  remote: /u/apps/redis_page
+  specs:
+    redis_page (0.1.5)
+      actionpack (~> 4.0.9)
+      activesupport (~> 4.0.9)
+      sidekiq (~> 3.2.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,47 +35,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     builder (3.1.4)
-    celluloid (0.17.1.2)
-      bundler
-      celluloid-essentials
-      celluloid-extras
-      celluloid-fsm
-      celluloid-pool
-      celluloid-supervision
-      dotenv
-      nenv
-      rspec-logsplit (>= 0.1.2)
-      timers (>= 4.1.1)
-    celluloid-essentials (0.20.2.1)
-      bundler
-      dotenv
-      nenv
-      rspec-logsplit (>= 0.1.2)
-      timers (>= 4.1.1)
-    celluloid-extras (0.20.1)
-      bundler
-      dotenv
-      nenv
-      rspec-logsplit (>= 0.1.2)
-      timers (>= 4.1.1)
-    celluloid-fsm (0.20.1)
-      bundler
-      dotenv
-      nenv
-      rspec-logsplit (>= 0.1.2)
-      timers (>= 4.1.1)
-    celluloid-pool (0.20.1)
-      bundler
-      dotenv
-      nenv
-      rspec-logsplit (>= 0.1.2)
-      timers (>= 4.1.1)
-    celluloid-supervision (0.20.1.1)
-      bundler
-      dotenv
-      nenv
-      rspec-logsplit (>= 0.1.2)
-      timers (>= 4.1.1)
+    celluloid (0.15.2)
+      timers (~> 1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -76,11 +45,9 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     connection_pool (2.2.0)
-    dotenv (2.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
     hike (1.2.3)
-    hitimes (1.2.3)
     httparty (0.13.5)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -97,7 +64,6 @@ GEM
     minitest (4.7.5)
     multi_json (1.11.2)
     multi_xml (0.5.5)
-    nenv (0.2.0)
     polyglot (0.3.5)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -122,23 +88,18 @@ GEM
     redis (3.2.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
-    redis_page (0.1.1)
-      actionpack (~> 4.0.9)
-      activesupport (~> 4.0.9)
-      sidekiq (~> 3.5.0)
-    rspec-logsplit (0.1.3)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    sidekiq (3.5.0)
-      celluloid (~> 0.17.0)
-      connection_pool (~> 2.2, >= 2.2.0)
-      json (~> 1.0)
-      redis (~> 3.2, >= 3.2.1)
-      redis-namespace (~> 1.5, >= 1.5.2)
+    sidekiq (3.2.6)
+      celluloid (= 0.15.2)
+      connection_pool (>= 2.0.0)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -152,8 +113,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    timers (4.1.1)
-      hitimes
+    timers (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -176,7 +136,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.9)
   redis
-  redis_page (~> 0.1.1)
+  redis_page!
   sass-rails (~> 4.0.2)
   sqlite3
   uglifier (>= 1.3.0)
