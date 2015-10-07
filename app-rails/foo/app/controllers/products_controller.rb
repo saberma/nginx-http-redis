@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  caches_redis_page :index, :show, append_country: true
+  caches_redis_page :index, :show, append_country: true, unless: Proc.new { params[:preview] }
 
   def index
   end
