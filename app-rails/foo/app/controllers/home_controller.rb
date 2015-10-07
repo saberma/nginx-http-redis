@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
-  caches_redis_page :page
-
   def page
+    redirect_to products_path
   end
 
   def missing

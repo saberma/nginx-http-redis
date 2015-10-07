@@ -1,4 +1,10 @@
-<h1><%= @product.id %> <%= Time.now.to_s(:db) %></h1>
+<%= render partial: 'home/now' %>
+
+<%= render partial: 'country' %>
+
+<br/>
+
+<h2>Product #<%= @product.id %></h2>
 
 <%= form_for @product do |f| %>
   <%= f.submit %>
@@ -6,12 +12,6 @@
 
 <br/>
 
-<%= render partial: 'country' %>
+<%= link_to "Products", products_path %>
 
-<script type="text/javascript">
-  if(!Cookies.get('csrf_token')) {
-    jQuery.get('/sessions/status', function(data) {
-      console.log(Cookies.get('csrf_token'));
-    });
-  };
-</script>
+<%= render partial: 'home/token' %>
