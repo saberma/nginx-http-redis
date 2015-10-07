@@ -9,3 +9,11 @@
 <br/>
 
 <%= render partial: 'country' %>
+
+<script type="text/javascript">
+  if(!Cookies.get('csrf_token')) {
+    jQuery.get('/sessions/status', function(data) {
+      console.log(Cookies.get('csrf_token'));
+    });
+  };
+</script>
