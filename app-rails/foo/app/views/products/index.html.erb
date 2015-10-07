@@ -1,6 +1,10 @@
-<%- c(Product).all.each do |product| %>
-<h2><%= c(product).id %> <%= Time.now.to_s(:db) %></h1>
-<% end %>
+<%- collection = c(Collection.find_by_slug(:accessories)) %>
+
+<h1><%= Time.now.to_s(:db) %></h1>
+
+<%= render partial: 'country' %>
+
+<br/>
 
 <%= form_tag products_path, method: :post do%>
   <%= submit_tag 'Add Product' %>
@@ -8,4 +12,17 @@
 
 <br/>
 
-<%= render partial: 'country' %>
+<h2>All product</h2>
+<%- c(Product).all.each do |product| %>
+  <h3>Product #<%= c(product).id %></h3>
+  <%- if collection.products.include?(product) %>
+    <%= form_tag remove_product_from_collections_path(collection, product_id: product.id), method: :delete do%>
+      <%= submit_tag 'Remove Product from Collection' %>
+    <% end %>
+  <%- else %>
+    <%= form_tag add_product_to_collections_path(collection, product_id: product.id), method: :post do%>
+      <%= submit_tag 'Add Product to Collection' %>
+    <% end %>
+  <% end %>
+  <br/>
+<% end %>

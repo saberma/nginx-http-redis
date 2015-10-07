@@ -10,6 +10,8 @@ Foo::Application.routes.draw do
 
   resources :products
   post "/products/:id", to: "products#update"
+  post "/collections/:id/products"              , to: "collections_products#create" , as: :add_product_to_collections
+  delete "/collections/:id/products/:product_id", to: "collections_products#destroy", as: :remove_product_from_collections
   root "home#page"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

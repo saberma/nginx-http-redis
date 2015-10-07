@@ -6,3 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.first_or_create
+
+Collection.where(slug: 'accessories').first_or_create

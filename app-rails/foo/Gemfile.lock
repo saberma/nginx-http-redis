@@ -1,7 +1,7 @@
 PATH
   remote: /u/apps/redis_page
   specs:
-    redis_page (0.1.5)
+    redis_page (0.1.6)
       actionpack (~> 4.0.9)
       activesupport (~> 4.0.9)
       sidekiq (~> 3.2.6)

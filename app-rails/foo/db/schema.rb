@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915070827) do
+ActiveRecord::Schema.define(version: 20151007024015) do
+
+  create_table "collections", force: true do |t|
+    t.string   "slug",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "collections_products", force: true do |t|
+    t.integer  "collection_id"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", force: true do |t|
     t.datetime "created_at"
