@@ -25,7 +25,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 
 gem 'redis'                  # Redis 缓存
-gem 'redis_page', '~> 0.1.11' # 保存页面到 Redis 缓存
+gem 'redis_page', '~> 0.1.12' # 保存页面到 Redis 缓存
 # gem 'redis_page', path: '/u/apps/redis_page'          # 调试，同时需要修改 app-rails/Dockfile
 
 gem 'unicorn'
