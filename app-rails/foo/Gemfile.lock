@@ -80,7 +80,7 @@ GEM
     redis (3.2.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
-    redis_page (0.1.12)
+    redis_page (0.1.13)
       actionpack (~> 4.0.9)
       activesupport (~> 4.0.9)
       sidekiq (~> 3.2.6)
@@ -132,7 +132,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.9)
   redis
-  redis_page (~> 0.1.12)
+  redis_page (~> 0.1.13)
   sass-rails (~> 4.0.2)
   sqlite3
   uglifier (>= 1.3.0)
