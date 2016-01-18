@@ -20,8 +20,6 @@ brew cask install virtualbox43691406
 brew install docker-compose
 brew install docker-machine                     # 使用 docker-machine 来管理 docker 容器
 docker-machine create --driver virtualbox dev   # 创建虚拟机 dev
-# 创建虚拟机 dev
-docker-machine create --driver virtualbox --virtualbox-boot2docker-url https://get.daocloud.io/boot2docker/boot2docker-lastest.iso dev
 
 eval "$(docker-machine env dev)"                # export docker machine 的配置信息，之后就可以使用 docker 命令了
 # 利用 daocloud 加速下载 images
